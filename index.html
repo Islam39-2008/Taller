@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمارين زيادة الطول</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">تمارين الطول</h1>
+            <div class="nav-buttons">
+                <a href="analysis.html" class="nav-link">التحليل العلمي</a>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="sun">☀️</span>
+                    <span class="moon">🌙</span>
+                </button>
+                <button id="toggleMusicBtn" class="theme-toggle">🎵 تشغيل الموسيقى</button>
+            </div>
+        </div>
+    </nav>
+<audio id="player_playing" src="voices/playing.mp3"></audio>
+<audio id="player_complet_to_rust" src="voices/complete_to_rust.mp3"></audio>
+<audio id="clickSound" src="voices/button-click.mp3" preload="auto"></audio>
+
+<audio id="backgroundMusic" src="voices/background.mp3" loop preload="auto"></audio>
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <!-- بطاقة التمرين -->
+        <div class="exercise-card">
+            <h2 id="exerciseName" class="exercise-name">التمدد العمودي</h2>
+            
+            <!-- صورة التمرين -->
+            <div class="exercise-image-container">
+                <img id="exerciseImage" src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=تمرين+التمدد" alt="تمرين">
+            </div>
+
+            <!-- مؤقت أو عداد -->
+            <div class="timer-section">
+                <div id="timerDisplay" class="timer-display">
+                    <span id="timeLeft">30</span>
+                    <span class="timer-label">ثانية</span>
+                </div>
+                
+                <div id="repsDisplay" class="reps-display" style="display: none;">
+                    <span id="currentReps">0</span> / <span id="totalReps">15</span>
+                    <span class="reps-label">عدة</span>
+                </div>
+            </div>
+
+            <!-- شريط التقدم -->
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <!-- أزرار التحكم -->
+            <div class="control-buttons">
+                <button id="prevBtn" class="control-btn secondary-btn">
+                    ⏮️ السابق
+                </button>
+                
+                <button id="playPauseBtn" class="control-btn primary-btn">
+                    ⏸️ إيقاف
+                </button>
+                
+                <button id="completeBtn" class="control-btn success-btn" style="display: none;">
+                    ✅ إكمال
+                </button>
+                
+                <button id="nextBtn" class="control-btn secondary-btn">
+                    التالي ⏭️
+                </button>
+            </div>
+
+            <!-- معلومات التمرين -->
+            <div class="exercise-info">
+                <h3>وصف التمرين:</h3>
+                <p id="exerciseDescription">قف بشكل مستقيم وارفع ذراعيك فوق رأسك، تمدد لأعلى قدر الإمكان.</p>
+            </div>
+        </div>
+
+        <!-- شاشة الاستراحة -->
+        <div id="restScreen" class="rest-screen" style="display: none;">
+            <div class="rest-content">
+                <h2>وقت الاستراحة</h2>
+                <div class="rest-timer">
+                    <span id="restTime">15</span>
+                    <span>ثانية</span>
+                </div>
+                <p>التمرين التالي: <span id="nextExerciseName"></span></p>
+                <button id="skipRestBtn" class="skip-rest-btn">تخطي الاستراحة</button>
+            </div>
+        </div>
+
+        <!-- معلومات التقدم -->
+        <div class="progress-info">
+            <div class="progress-item">
+                <span class="progress-label">التمرين:</span>
+                <span id="currentExerciseNum">1</span> / <span id="totalExercises">8</span>
+            </div>
+            <div class="progress-item">
+                <span class="progress-label">الوقت الكلي:</span>
+                <span id="totalTime">00:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
