@@ -71,7 +71,7 @@ const toggleMusicBtn = document.getElementById('toggleMusicBtn');
 function toggleBackgroundMusic() {
     if (backgroundMusic.paused) {
         backgroundMusic.play().then(() => {
-            toggleMusicBtn.textContent = "⏸️ إيقاف الموسيقى";
+            toggleMusicBtn.textContent = "⏸️";
             toggleMusicBtn.classList.add('playing');
         }).catch(e => {
             console.warn("فشل تشغيل الموسيقى — قد يحتاج تفاعل مستخدم أولًا:", e);
@@ -79,7 +79,7 @@ function toggleBackgroundMusic() {
         });
     } else {
         backgroundMusic.pause();
-        toggleMusicBtn.textContent = "🎵 تشغيل الموسيقى";
+        toggleMusicBtn.textContent = "🎵";
         toggleMusicBtn.classList.remove('playing');
     }
 }
@@ -364,4 +364,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 // تهيئة الصفحة عند التحميل
+
 init();
